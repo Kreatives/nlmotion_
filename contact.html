@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact en kennismaking — NL Motion</title>
+  <meta name="description" content="Plan een vrijblijvende kennismaking met NL Motion. Voor organisaties en voor jongeren en ouders in de regio Arnhem. Reactie binnen twee werkdagen." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pages.css" />
+</head>
+<body>
+
+  <svg width="0" height="0" class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-star" viewBox="0 0 20 20">
+      <path d="M10 1.6l2.47 5.006 5.525.803-3.998 3.897.944 5.503L10 14.213 5.06 16.81l.944-5.503L2.005 7.41l5.525-.803z" />
+    </symbol>
+  </svg>
+
+  <header class="nav" data-nav>
+    <div class="nav__inner container">
+      <a class="nav__logo" href="index.html">NL MOTION</a>
+      <nav class="nav__links" aria-label="Hoofdmenu">
+        <a href="index.html#aanpak">Aanpak</a>
+        <a href="index.html#diensten">Diensten</a>
+        <a href="over-nathan.html">Over Nathan</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <a class="btn btn--ghost btn--ghost-light nav__cta" href="#formulier">Kennismaken</a>
+      <button class="nav__toggle" data-nav-toggle aria-label="Menu openen" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. KOP EN KEUZEHULP -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Kruimelpad">
+          <a href="index.html">Home</a><span>/</span>
+          <a aria-current="page">Contact</a>
+        </nav>
+        <p class="kicker kicker--light" data-reveal><span class="kicker__mark">//</span> Contact</p>
+        <h1 class="display page-hero__title" data-split>Plan een kennismaking met NL Motion.</h1>
+        <p class="page-hero__lead" data-reveal>
+          Vertel kort wie je bent en waar het om gaat, dan neem ik binnen twee werkdagen persoonlijk contact met je op.
+        </p>
+        <div class="route-cards" data-reveal-group>
+          <article class="route-card">
+            <h2 class="route-card__title">Ik werk bij een organisatie</h2>
+            <p class="route-card__text">Voor gemeenten, scholen en zorgorganisaties die een traject, groepstraining of workshop overwegen.</p>
+            <a class="route-card__link" href="#formulier">Naar het formulier voor organisaties</a>
+          </article>
+          <article class="route-card">
+            <h2 class="route-card__title">Ik ben jongere of ouder</h2>
+            <p class="route-card__text">Voor jongeren en ouders die persoonlijke training of een vrijblijvende intake willen plannen.</p>
+            <a class="route-card__link" href="#formulier">Naar het formulier voor particulieren</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FORMULIER + DIRECTE GEGEVENS -->
+    <section class="section section--dark" id="formulier">
+      <div class="container split">
+        <div class="split__main" data-reveal>
+          <p class="kicker kicker--light"><span class="kicker__mark">//</span> Stuur een bericht</p>
+          <h2 class="display section__title">Vijf velden, meer niet.</h2>
+          <form class="contact-form" action="#" method="post">
+            <div class="field">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="organisatie">Organisatie <span aria-hidden="true">(optioneel)</span></label>
+              <input type="text" id="organisatie" name="organisatie" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="bericht">Waar gaat het om?</label>
+              <textarea id="bericht" name="bericht" required></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">Verstuur je bericht</button>
+          </form>
+        </div>
+        <aside class="contact-detail split__aside" data-reveal>
+          <div class="contact-detail__row">
+            <span class="contact-detail__label">Bellen</span>
+            <span class="contact-detail__value"><a href="tel:+31612345678">06 12 34 56 78</a></span>
+          </div>
+          <div class="contact-detail__row">
+            <span class="contact-detail__label">Mailen</span>
+            <span class="contact-detail__value"><a href="mailto:info@nlmotion.nl">info@nlmotion.nl</a></span>
+          </div>
+          <div class="contact-detail__row">
+            <span class="contact-detail__label">Werkgebied</span>
+            <span class="contact-detail__value">Regio Arnhem</span>
+          </div>
+          <div class="contact-detail__row">
+            <span class="contact-detail__label">Samenwerkingen</span>
+            <div class="logo-row">
+              <img src="images/logo-arnhem.webp" alt="Gemeente Arnhem" />
+              <img src="images/logo-intego.png" alt="Intego Zorg" />
+              <img src="images/logo-newfuture.svg" alt="NewFuture Zorg" />
+              <img src="images/logo-powerpluk.png" alt="PowerPluk" />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 3. WAT ER DAARNA GEBEURT -->
+    <section class="section section--paper">
+      <div class="container">
+        <div class="services__head" data-reveal>
+          <p class="kicker"><span class="kicker__mark">//</span> Wat er daarna gebeurt</p>
+          <h2 class="display section__title">Duidelijkheid vanaf het moment dat je verstuurt.</h2>
+        </div>
+        <ol class="steps steps--3" data-reveal-group>
+          <li class="step-item">
+            <span class="step-item__num">01</span>
+            <h3 class="step-item__title">Reactie binnen twee werkdagen</h3>
+            <p class="step-item__text">Je ontvangt binnen twee werkdagen een persoonlijke reactie van Nathan.</p>
+          </li>
+          <li class="step-item">
+            <span class="step-item__num">02</span>
+            <h3 class="step-item__title">Kennismakingsgesprek</h3>
+            <p class="step-item__text">We plannen een gesprek waarin we de situatie en de doelen bespreken.</p>
+          </li>
+          <li class="step-item">
+            <span class="step-item__num">03</span>
+            <h3 class="step-item__title">Voorstel op maat</h3>
+            <p class="step-item__text">Je krijgt een helder voorstel, afgestemd op jouw organisatie of jongere.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="nav__logo" href="index.html">NL MOTION</a>
+        <p>Begeleiding voor jongeren tijdens het trainen. Werkzaam in en rond Arnhem.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footermenu">
+        <a href="individuele-trajecten.html">Individuele trajecten</a>
+        <a href="groepstrainingen.html">Groepstrainingen en workshops</a>
+        <a href="personal-training.html">Personal training</a>
+        <a href="over-nathan.html">Over Nathan</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="mailto:info@nlmotion.nl">info@nlmotion.nl</a>
+        <a href="tel:+31612345678">06 12 34 56 78</a>
+      </div>
+    </div>
+    <div class="container footer__meta">
+      <span>NL Motion</span>
+      <span>KvK 00000000</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+/* ============================================================
+   NL MOTION — pages.css
+   Componenten voor de sub-pagina's. Bouwt voort op styles.css
+   (dezelfde tokens, fonts, buttons, kleuren). Niets nieuws aan
+   het merk; alleen layout-bouwstenen die per pagina terugkomen.
+   ============================================================ */
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  color: var(--on-dark-mute);
+  margin-bottom: 1.75rem;
+}
+.breadcrumb a { transition: color 0.2s ease; }
+.breadcrumb a:hover { color: var(--on-dark); }
+.breadcrumb span { opacity: 0.45; }
+.breadcrumb [aria-current] { color: var(--on-dark); }
+
+/* ---------- Page-hero (compacter dan de homepage-hero) ---------- */
+.page-hero {
+  position: relative;
+  background: var(--ink);
+  color: var(--on-dark);
+  padding-block: clamp(7.5rem, 6rem + 7vw, 12rem) clamp(4rem, 3rem + 4vw, 7rem);
+  overflow: hidden;
+}
+.page-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+.page-hero__content { grid-column: 1 / 8; }
+.page-hero__media { grid-column: 8 / -1; aspect-ratio: 4 / 3; }
+.page-hero--portrait .page-hero__media { grid-column: 1 / 6; aspect-ratio: 3 / 4; }
+.page-hero--portrait .page-hero__content { grid-column: 6 / -1; }
+.page-hero__title {
+  font-size: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+  margin-bottom: 1.5rem;
+  max-width: 20ch;
+}
+.page-hero__lead {
+  color: var(--on-dark-mute);
+  font-size: var(--fs-lead);
+  max-width: 54ch;
+  margin-bottom: 2rem;
+}
+.page-hero__lead + .page-hero__lead { margin-top: -1rem; }
+.page-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.page-hero--portrait .page-hero__actions { margin-top: 2rem; }
+/* In de portret-hero staat de body links; de gecentreerde variant geldt
+   alleen binnen .prose-center. */
+.page-hero__content .prose-center__body { margin-top: 0; }
+.page-hero__content .prose-center__body p { color: var(--on-dark-mute); }
+
+/* ---------- Gecentreerde tekstkolom ---------- */
+.prose-center {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+.prose-center .kicker { justify-content: center; }
+.prose-center .section__title { margin-inline: auto; }
+.prose-center__body { margin-top: 1.5rem; display: grid; gap: 1.25rem; }
+.prose-center__body p { color: var(--on-light-mute); }
+.section--dark .prose-center__body p { color: var(--on-dark-mute); }
+
+/* ---------- Checklist (herkenningspunten) ---------- */
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+.checklist__item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+}
+.checklist__item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 0.5em;
+  background: var(--accent);
+  flex: none;
+}
+
+/* ---------- Stappenrij (genummerd, 3 of 4) ---------- */
+.steps { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.steps--3 { grid-template-columns: repeat(3, 1fr); }
+.steps--4 { grid-template-columns: repeat(4, 1fr); }
+.step-item { padding-top: 2rem; border-top: 1px solid var(--line-dark); }
+.step-item__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+}
+.step-item__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.005em;
+  margin-bottom: 0.85rem;
+}
+.step-item__text { color: var(--on-dark-mute); font-size: var(--fs-sm); }
+.section--paper .step-item { border-color: var(--line-light); }
+.section--paper .step-item__text { color: var(--on-light-mute); }
+.steps__note {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-dark);
+  color: var(--on-dark-mute);
+  font-size: var(--fs-sm);
+  max-width: 70ch;
+}
+.section--paper .steps__note { border-color: var(--line-light); color: var(--on-light-mute); }
+
+/* ---------- Twee-koloms blok ---------- */
+.split { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; }
+.split__main { grid-column: 1 / 7; }
+.split__aside { grid-column: 8 / -1; }
+
+/* ---------- Spec-lijst (VOG, verzekering, KvK) ---------- */
+.spec-list { display: grid; }
+.spec-list__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--line-dark);
+  font-size: var(--fs-sm);
+}
+.spec-list__item:last-child { border-bottom: 1px solid var(--line-dark); }
+.spec-list__label { color: var(--on-dark-mute); }
+.spec-list__value { text-align: right; }
+.section--paper .spec-list__item { border-color: var(--line-light); }
+.section--paper .spec-list__label { color: var(--on-light-mute); }
+
+/* ---------- Tariefblok ---------- */
+.price { display: grid; gap: 1.25rem; max-width: 640px; }
+.price__amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 2rem + 2.5vw, 4rem);
+  letter-spacing: -0.01em;
+}
+.price__amount small {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--on-dark-mute);
+  letter-spacing: -0.02em;
+}
+.section--paper .price__amount small { color: var(--on-light-mute); }
+.price__list { display: grid; gap: 0.75rem; }
+.price__list li { display: flex; gap: 0.85rem; align-items: flex-start; font-size: var(--fs-sm); color: var(--on-dark-mute); }
+.section--paper .price__list li { color: var(--on-light-mute); }
+.price__list li::before { content: ""; width: 8px; height: 8px; margin-top: 0.5em; background: var(--accent); flex: none; }
+
+/* ---------- Feature-grid (2x2: wat je leert) ---------- */
+.feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.feature { padding-top: 1.5rem; border-top: 1px solid var(--line-light); }
+.section--dark .feature { border-color: var(--line-dark); }
+.feature__num { font-family: var(--font-display); font-size: 1.375rem; color: var(--accent); }
+.feature__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.005em;
+  margin: 0.85rem 0 0.75rem;
+}
+.feature__text { color: var(--on-light-mute); font-size: var(--fs-sm); }
+.section--dark .feature__text { color: var(--on-dark-mute); }
+
+/* ---------- Tijdlijn (ervaring en kwalificaties) ---------- */
+.timeline { display: grid; }
+.timeline__item {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+  border-top: 1px solid var(--line-dark);
+}
+.timeline__item:last-child { border-bottom: 1px solid var(--line-dark); }
+.timeline__key {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.005em;
+}
+.timeline__val { color: var(--on-dark-mute); }
+
+/* ---------- Brede media (introductievideo) ---------- */
+.media--wide { aspect-ratio: 16 / 9; }
+.missie-video { max-width: 900px; margin: clamp(2.5rem, 5vw, 3.5rem) auto 0; }
+
+/* ---------- Fotostrook ---------- */
+.photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }
+.photo-strip--4 { grid-template-columns: repeat(4, 1fr); }
+.photo-strip .media { aspect-ratio: 3 / 4; }
+
+/* ---------- Route-kaarten (contact keuzehulp) ---------- */
+.route-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 3vw, 2rem); margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background: var(--ink-card);
+  border: 1px solid var(--line-dark);
+  border-radius: 3px;
+  transition: border-color 0.25s ease;
+}
+.route-card:hover { border-color: rgba(244, 244, 241, 0.32); }
+.route-card__title { font-family: var(--font-display); text-transform: uppercase; font-size: var(--fs-h3); letter-spacing: -0.005em; }
+.route-card__text { color: var(--on-dark-mute); font-size: var(--fs-sm); }
+.route-card__link {
+  margin-top: auto;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--on-dark);
+  align-self: flex-start;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.route-card__link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- Contactformulier ---------- */
+.contact-form { display: grid; gap: 1.25rem; }
+.field { display: grid; gap: 0.5rem; }
+.field label { font-size: var(--fs-sm); color: var(--on-dark-mute); }
+.field input,
+.field textarea {
+  background: transparent;
+  border: 1px solid var(--line-dark);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  color: var(--on-dark);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  letter-spacing: -0.02em;
+}
+.field input:focus,
+.field textarea:focus { outline: none; border-color: var(--accent); }
+.field textarea { min-height: 130px; resize: vertical; }
+.contact-form .btn { justify-self: start; margin-top: 0.5rem; }
+
+/* ---------- Directe gegevens (contact aside) ---------- */
+.contact-detail { display: grid; gap: 1.5rem; align-content: start; }
+.contact-detail__row { display: grid; gap: 0.35rem; }
+.contact-detail__label { font-size: var(--fs-kicker); text-transform: uppercase; letter-spacing: 0.04em; color: var(--on-dark-mute); }
+.contact-detail__value { font-size: var(--fs-lead); }
+.contact-detail__value a:hover { color: var(--accent); }
+
+/* ---------- Meta-regel op dienstkaarten (duur, groepsgrootte) ---------- */
+.service-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: var(--fs-sm);
+  color: var(--on-light-mute);
+  margin-bottom: 1.5rem;
+}
+.service-card__meta span::after { content: "·"; margin-left: 0.75rem; opacity: 0.5; }
+.service-card__meta span:last-child::after { content: ""; }
+
+/* ---------- Uitgelichte quote ---------- */
+.quote--feature {
+  max-width: 900px;
+  margin-inline: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  gap: 2rem;
+}
+.quote--feature .quote__stars { justify-content: center; }
+.quote--feature blockquote {
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  line-height: 1.4;
+}
+.quote--feature .quote__source { border: none; padding: 0; align-items: center; }
+
+/* ---------- Logo-rij herbruik (samenwerkingen) ---------- */
+.logo-row { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.logo-row img { height: clamp(22px, 2vw, 30px); width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+.logo-row--dark-on-light img { filter: none; opacity: 1; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .page-hero__grid { grid-template-columns: 1fr; }
+  .page-hero__content,
+  .page-hero__media { grid-column: 1 / -1; }
+  .page-hero__media { aspect-ratio: 16 / 10; max-height: 55vh; }
+  .page-hero--portrait .page-hero__media { order: 2; aspect-ratio: 4 / 3; }
+
+  .split { grid-template-columns: 1fr; }
+  .split__main, .split__aside { grid-column: 1 / -1; }
+
+  .steps--4 { grid-template-columns: repeat(2, 1fr); }
+  .steps--3 { grid-template-columns: 1fr; }
+  .route-cards { grid-template-columns: 1fr; }
+  .photo-strip, .photo-strip--4 { grid-template-columns: repeat(2, 1fr); }
+  .timeline__item { grid-template-columns: 1fr; gap: 0.5rem; }
+}
+
+@media (max-width: 560px) {
+  .checklist { grid-template-columns: 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .steps--4 { grid-template-columns: 1fr; }
+  .photo-strip, .photo-strip--4 { grid-template-columns: 1fr; }
+}
