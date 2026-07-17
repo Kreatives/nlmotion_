@@ -33,14 +33,14 @@
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
-.page-hero__content { grid-column: 1 / 8; }
-.page-hero__media { grid-column: 8 / -1; aspect-ratio: 4 / 3; }
+.page-hero__content { grid-column: 1 / 9; }
+.page-hero__media { grid-column: 9 / -1; aspect-ratio: 4 / 3; }
 .page-hero--portrait .page-hero__media { grid-column: 1 / 6; aspect-ratio: 3 / 4; }
 .page-hero--portrait .page-hero__content { grid-column: 6 / -1; }
 .page-hero__title {
   font-size: clamp(2.5rem, 1.8rem + 3vw, 4rem);
   margin-bottom: 1.5rem;
-  max-width: 26ch;
+  max-width: 38ch;
 }
 .page-hero__lead {
   color: var(--on-dark-mute);
