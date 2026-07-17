@@ -10,6 +10,29 @@ document.documentElement.classList.add("js");
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hasGsap = typeof window.gsap !== "undefined";
 
+  /* ---------- Hero-video: autoplay forceren op mobiel (iOS/Android) ---------- */
+  const heroVideo = document.querySelector(".hero__video");
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.setAttribute("muted", "");
+    heroVideo.playsInline = true;
+    const tryPlay = () => {
+      const p = heroVideo.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    tryPlay();
+    heroVideo.addEventListener("canplay", tryPlay, { once: true });
+    heroVideo.addEventListener("loadeddata", tryPlay, { once: true });
+    // Val terug op de eerste interactie als de browser autoplay blokkeert
+    ["touchstart", "pointerdown", "scroll"].forEach((ev) =>
+      window.addEventListener(ev, tryPlay, { once: true, passive: true })
+    );
+    // Hervat bij terugkomen naar het tabblad
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) tryPlay();
+    });
+  }
+
   /* ---------- Nav: scroll-state + mobiel menu ---------- */
   const nav = document.querySelector("[data-nav]");
   const setNavState = () => {

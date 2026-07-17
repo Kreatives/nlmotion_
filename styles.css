@@ -42,6 +42,12 @@
   --fs-sm: 0.9375rem;
   --fs-kicker: 0.75rem;
 
+  /* Consistente leesbreedtes (overal hetzelfde, responsive) */
+  --measure: 64ch;       /* lopende body-tekst */
+  --measure-lead: 58ch;  /* inleidende lead-tekst */
+  --measure-h1: 36ch;    /* H1-koppen (display-font, telt breed) */
+  --measure-h2: 38ch;    /* H2-koppen (display-font, telt breed) */
+
   /* spacing */
   --space-section: clamp(5rem, 3rem + 8vw, 10rem);
   --container: 1600px;
@@ -109,7 +115,7 @@ p { margin: 0; }
   letter-spacing: inherit;
 }
 
-.section__title { font-size: var(--fs-h2); max-width: 38ch; text-wrap: balance; }
+.section__title { font-size: var(--fs-h2); max-width: var(--measure-h2); text-wrap: balance; }
 .section--paper .section__title em { color: var(--on-light); }
 
 .kicker {
@@ -302,11 +308,11 @@ p { margin: 0; }
 .hero__inner { position: relative; z-index: 2; }
 .hero__title {
   font-size: var(--fs-display);
-  max-width: 34ch;
+  max-width: var(--measure-h1);
   margin-bottom: 1.5rem;
 }
 .hero__lead {
-  max-width: 56ch;
+  max-width: var(--measure-lead);
   color: var(--on-dark-mute);
   font-size: var(--fs-lead);
   margin-bottom: 2.5rem;
@@ -363,7 +369,7 @@ p { margin: 0; }
   grid-column: 8 / -1;
   display: grid;
   gap: 1.5rem;
-  max-width: 62ch;
+  max-width: var(--measure);
   color: var(--on-light-mute);
 }
 .problem__body p { color: inherit; }
@@ -518,7 +524,7 @@ p { margin: 0; }
   display: grid;
   gap: 1.25rem;
   color: var(--on-dark-mute);
-  max-width: 58ch;
+  max-width: var(--measure);
   margin-bottom: 2.5rem;
 }
 .about__text p:first-child { color: var(--on-dark); font-size: var(--fs-lead); }
@@ -636,7 +642,7 @@ p { margin: 0; }
 .faq-item__a {
   overflow: hidden;
   color: var(--on-dark-mute);
-  max-width: 68ch;
+  max-width: var(--measure);
 }
 .faq-item__a p { padding-bottom: 1.75rem; }
 
@@ -668,7 +674,7 @@ p { margin: 0; }
   margin-bottom: 1.5rem;
 }
 .cta__lead {
-  max-width: 52ch;
+  max-width: var(--measure-lead);
   margin-inline: auto;
   color: var(--on-dark-mute);
   font-size: var(--fs-lead);
@@ -901,3 +907,39 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .bg { animation: none; }
 }
+
+/* ============================================================
+   CONSISTENTE SUBKOPPEN (H3-niveau, uppercase display)
+   Eén letterspacing voor alle titels van dit niveau, over alle pagina's.
+   ============================================================ */
+.step__title,
+.service-card__title,
+.step-item__title,
+.feature__title,
+.route-card__title,
+.timeline__key,
+.faq-item__q,
+.quote__name,
+.about__stat dt { letter-spacing: 0.02em; }
+
+/* ============================================================
+   WHATSAPP-KNOP (sticky rechtsonder)
+   ============================================================ */
+.wa-fab {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 200;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.wa-fab:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36); }
+.wa-fab svg { width: 32px; height: 32px; fill: currentColor; }
+@media (prefers-reduced-motion: reduce) { .wa-fab { transition: none; } }

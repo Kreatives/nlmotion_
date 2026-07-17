@@ -38,14 +38,14 @@
 .page-hero--portrait .page-hero__media { grid-column: 1 / 6; aspect-ratio: 3 / 4; }
 .page-hero--portrait .page-hero__content { grid-column: 6 / -1; }
 .page-hero__title {
-  font-size: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+  font-size: var(--fs-display);
   margin-bottom: 1.5rem;
-  max-width: 38ch;
+  max-width: var(--measure-h1);
 }
 .page-hero__lead {
   color: var(--on-dark-mute);
   font-size: var(--fs-lead);
-  max-width: 54ch;
+  max-width: var(--measure-lead);
   margin-bottom: 2rem;
 }
 .page-hero__lead + .page-hero__lead { margin-top: -1rem; }
@@ -119,7 +119,7 @@
   border-top: 1px solid var(--line-dark);
   color: var(--on-dark-mute);
   font-size: var(--fs-sm);
-  max-width: 70ch;
+  max-width: var(--measure);
 }
 .section--paper .steps__note { border-color: var(--line-light); color: var(--on-light-mute); }
 
