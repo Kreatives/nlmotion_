@@ -68,6 +68,10 @@ document.documentElement.classList.add("js");
   };
   if (!hasGsap || prefersReduced) {
     showAll();
+    document.querySelectorAll(".method .step").forEach((s) => {
+      s.classList.add("is-active");
+      s.style.setProperty("--line", "1");
+    });
     return;
   }
 
@@ -141,6 +145,28 @@ document.documentElement.classList.add("js");
       scrollTrigger: { trigger: group, start: "top 82%" },
     });
   });
+
+  /* ---------- Methode: tijdlijn-lijn volgt de scroll van bolletje naar bolletje ---------- */
+  const methodSteps = document.querySelector(".method__steps");
+  if (methodSteps && window.ScrollTrigger) {
+    const steps = gsap.utils.toArray(".method .step");
+    const n = steps.length;
+    if (steps[0]) steps[0].classList.add("is-active");
+    window.ScrollTrigger.create({
+      trigger: methodSteps,
+      start: "top 65%",
+      end: "bottom 75%",
+      scrub: true,
+      onUpdate: (self) => {
+        const p = self.progress * n;
+        steps.forEach((step, i) => {
+          const local = Math.max(0, Math.min(1, p - i));
+          step.style.setProperty("--line", local.toFixed(3));
+          step.classList.toggle("is-active", p >= i);
+        });
+      },
+    });
+  }
 
   /* ---------- FAQ: ScrollTrigger verversen bij open/dicht ---------- */
   document.querySelectorAll(".faq-item").forEach((item) => {

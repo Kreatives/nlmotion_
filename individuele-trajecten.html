@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="pages.css" />
 </head>
 <body>
+  <div class="bg" aria-hidden="true"></div>
 
   <svg width="0" height="0" class="svg-sprite" aria-hidden="true" focusable="false">
     <symbol id="icon-star" viewBox="0 0 20 20">
@@ -25,7 +26,16 @@
       <a class="nav__logo" href="index.html">NL MOTION</a>
       <nav class="nav__links" aria-label="Hoofdmenu">
         <a href="index.html#aanpak">Aanpak</a>
-        <a href="index.html#diensten">Diensten</a>
+        <div class="nav__item nav__item--has-menu">
+          <a class="nav__link-top" href="index.html#diensten">Diensten
+            <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8l4-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav__dropdown">
+            <a href="individuele-trajecten.html">Individuele trajecten</a>
+            <a href="groepstrainingen.html">Groepstrainingen en workshops</a>
+            <a href="personal-training.html">Personal training</a>
+          </div>
+        </div>
         <a href="over-nathan.html">Over Nathan</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -46,7 +56,7 @@
             <a href="index.html#diensten">Diensten</a><span>/</span>
             <a aria-current="page">Individuele trajecten</a>
           </nav>
-          <p class="kicker kicker--light" data-reveal><span class="kicker__mark">//</span> Voor opdrachtgevers</p>
+          <p class="kicker kicker--light" data-reveal>Voor opdrachtgevers</p>
           <h1 class="display page-hero__title" data-split>Individuele trajecten die aanslaan waar een gesprek stopt.</h1>
           <p class="page-hero__lead" data-reveal>
             Eén-op-één begeleiding voor jongeren in een zorg- of gemeentelijk traject, opgebouwd rond beweging, dagritme en gedrag. Nathan begeleidt elke jongere zelf, met vaste afspraken en een opbouw die past bij het niveau.
@@ -65,7 +75,7 @@
     <section class="section section--paper">
       <div class="container">
         <div class="prose-center" data-reveal>
-          <p class="kicker"><span class="kicker__mark">//</span> Voor wie</p>
+          <p class="kicker">Voor wie</p>
           <h2 class="display section__title">Voor welke jongeren een traject werkt.</h2>
           <div class="prose-center__body">
             <p>
@@ -89,7 +99,7 @@
     <section class="section section--dark">
       <div class="container">
         <div class="services__head" data-reveal>
-          <p class="kicker kicker--light"><span class="kicker__mark">//</span> Werkwijze</p>
+          <p class="kicker kicker--light">Werkwijze</p>
           <h2 class="display section__title">Van aanmelding tot de eerste sessies.</h2>
         </div>
         <ol class="steps steps--4" data-reveal-group>
@@ -124,7 +134,7 @@
     <section class="section section--paper">
       <div class="container split">
         <div class="split__main" data-reveal>
-          <p class="kicker"><span class="kicker__mark">//</span> Veiligheid</p>
+          <p class="kicker">Veiligheid</p>
           <h2 class="display section__title">Hoe veiligheid en verantwoording geborgd zijn.</h2>
           <div class="prose-center__body">
             <p>
@@ -145,7 +155,7 @@
     <section class="section section--dark">
       <div class="container">
         <div class="services__head" data-reveal>
-          <p class="kicker kicker--light"><span class="kicker__mark">//</span> Tarief</p>
+          <p class="kicker kicker--light">Tarief</p>
           <h2 class="display section__title">Tarief en praktische afspraken.</h2>
         </div>
         <div class="price" data-reveal>

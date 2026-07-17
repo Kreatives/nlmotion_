@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="pages.css" />
 </head>
 <body>
+  <div class="bg" aria-hidden="true"></div>
 
   <svg width="0" height="0" class="svg-sprite" aria-hidden="true" focusable="false">
     <symbol id="icon-star" viewBox="0 0 20 20">
@@ -25,7 +26,16 @@
       <a class="nav__logo" href="index.html">NL MOTION</a>
       <nav class="nav__links" aria-label="Hoofdmenu">
         <a href="index.html#aanpak">Aanpak</a>
-        <a href="index.html#diensten">Diensten</a>
+        <div class="nav__item nav__item--has-menu">
+          <a class="nav__link-top" href="index.html#diensten">Diensten
+            <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8l4-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav__dropdown">
+            <a href="individuele-trajecten.html">Individuele trajecten</a>
+            <a href="groepstrainingen.html">Groepstrainingen en workshops</a>
+            <a href="personal-training.html">Personal training</a>
+          </div>
+        </div>
         <a href="over-nathan.html" aria-current="page">Over Nathan</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -48,7 +58,7 @@
             <a href="index.html">Home</a><span>/</span>
             <a aria-current="page">Over Nathan</a>
           </nav>
-          <p class="kicker kicker--light" data-reveal><span class="kicker__mark">//</span> Over Nathan</p>
+          <p class="kicker kicker--light" data-reveal>Over Nathan</p>
           <h1 class="display page-hero__title" data-split>Van de ring naar de begeleiding van jongeren.</h1>
           <div class="prose-center__body" data-reveal-group>
             <p>
@@ -72,7 +82,7 @@
     <section class="section section--paper">
       <div class="container">
         <div class="prose-center" data-reveal>
-          <p class="kicker"><span class="kicker__mark">//</span> De missie</p>
+          <p class="kicker">De missie</p>
           <h2 class="display section__title">Beweging als middel, ontwikkeling als doel.</h2>
           <div class="prose-center__body">
             <p>
@@ -93,7 +103,7 @@
     <section class="section section--dark">
       <div class="container">
         <div class="services__head" data-reveal>
-          <p class="kicker kicker--light"><span class="kicker__mark">//</span> Ervaring</p>
+          <p class="kicker kicker--light">Ervaring</p>
           <h2 class="display section__title">Feiten, geen claims.</h2>
         </div>
         <dl class="timeline" data-reveal-group>
@@ -125,7 +135,7 @@
     <section class="section section--paper">
       <div class="container">
         <div class="services__head" data-reveal>
-          <p class="kicker"><span class="kicker__mark">//</span> In beeld</p>
+          <p class="kicker">In beeld</p>
           <h2 class="display section__title">Intensiteit en verbinding, naast elkaar.</h2>
         </div>
         <div class="photo-strip photo-strip--4" data-reveal-group>
