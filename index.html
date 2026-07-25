@@ -32,15 +32,29 @@
             <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8l4-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <div class="nav__dropdown">
-            <a href="individuele-trajecten">Individuele trajecten</a>
-            <a href="groepstrainingen">Groepstrainingen en workshops</a>
-            <a href="personal-training">Personal training</a>
+            <div class="nav__group">
+              <button type="button" class="nav__group-toggle" data-group-toggle aria-expanded="false">Voor organisaties
+                <svg class="nav__caret nav__caret--sub" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8l4-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav__group-list">
+                <a href="individuele-trajecten">Individuele trajecten</a>
+                <a href="groepstrainingen">Groepstrainingen en workshops</a>
+              </div>
+            </div>
+            <div class="nav__group">
+              <button type="button" class="nav__group-toggle" data-group-toggle aria-expanded="false">Voor particulieren
+                <svg class="nav__caret nav__caret--sub" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5L6 8l4-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="nav__group-list">
+                <a href="personal-training">Personal training</a>
+              </div>
+            </div>
           </div>
         </div>
-        <a href="over-nathan">Over Nathan</a>
+        <a href="over-nathan">Over ons</a>
         <a href="#reviews">Reviews</a>
       </nav>
-      <a class="btn btn--ghost btn--ghost-light nav__cta" href="contact">Kennismaken</a>
+      <a class="btn btn--ghost btn--ghost-light nav__cta" href="contact#kennismaking">Kennismaken</a>
       <button class="nav__toggle" data-nav-toggle aria-label="Menu openen" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -63,7 +77,7 @@
           Kickboksen en persoonlijke begeleiding
         </p>
         <h1 class="display hero__title" data-split>
-          Voor jongeren die meer nodig hebben dan een gesprek.
+          Voor jongeren die meer nodig<br>hebben dan een gesprek.
         </h1>
         <p class="hero__lead" data-reveal>
           NL Motion helpt gemeenten, scholen en zorgorganisaties in de regio Arnhem om jongeren van 12 tot 23 jaar te laten groeien in zelfvertrouwen, discipline en weerbaarheid. Plan een vrijblijvend kennismakingsgesprek.
@@ -154,12 +168,19 @@
       <div class="container">
         <div class="services__head">
           <p class="kicker" data-reveal>Diensten</p>
-          <h2 class="display section__title" data-reveal>Drie manieren om <em>samen te werken.</em></h2>
+          <h2 class="display section__title" data-reveal>Kies wat bij jouw situatie past.</h2>
+          <p class="services__intro" data-reveal>
+            Werk je vanuit een organisatie of kom je voor jezelf? Kies hieronder je situatie, dan tonen we alleen de diensten die daarbij horen.
+          </p>
+          <div class="services__toggle" data-service-toggle role="tablist" aria-label="Kies je situatie" data-reveal>
+            <button type="button" class="services__toggle-btn is-active" data-audience-btn="organisaties" role="tab" aria-selected="true">Voor organisaties</button>
+            <button type="button" class="services__toggle-btn" data-audience-btn="particulieren" role="tab" aria-selected="false">Voor particulieren</button>
+          </div>
         </div>
         <div class="services__grid" data-reveal-group>
-          <article class="service-card">
-            <figure class="service-card__media media" aria-hidden="true">
-              <span class="media__note">Beeld — individuele training</span>
+          <article class="service-card" data-audience="organisaties">
+            <figure class="service-card__media media">
+              <img src="images/individuele-trajecten.png" alt="Jongere in een één-op-één training bij NL Motion" />
             </figure>
             <p class="service-card__audience">Voor gemeenten en zorgaanbieders</p>
             <h3 class="service-card__title">Individuele trajecten</h3>
@@ -169,9 +190,9 @@
             <a class="service-card__link" href="individuele-trajecten">Bekijk individuele trajecten</a>
           </article>
 
-          <article class="service-card">
-            <figure class="service-card__media media" aria-hidden="true">
-              <span class="media__note">Beeld — groepstraining</span>
+          <article class="service-card" data-audience="organisaties">
+            <figure class="service-card__media media">
+              <img src="images/groepstrainingen.jpg" alt="Groep jongeren tijdens een training bij NL Motion" />
             </figure>
             <p class="service-card__audience">Voor organisaties en scholen</p>
             <h3 class="service-card__title">Groepstrainingen en workshops</h3>
@@ -181,9 +202,9 @@
             <a class="service-card__link" href="groepstrainingen">Bekijk groepstrainingen</a>
           </article>
 
-          <article class="service-card">
-            <figure class="service-card__media media" aria-hidden="true">
-              <span class="media__note">Beeld — personal training</span>
+          <article class="service-card is-hidden" data-audience="particulieren">
+            <figure class="service-card__media media">
+              <img src="images/personal-training.jpg" alt="Persoonlijke training in de zaal bij NL Motion" />
             </figure>
             <p class="service-card__audience">Voor particulieren</p>
             <h3 class="service-card__title">Personal training</h3>
@@ -204,7 +225,7 @@
           <!-- Vervang door: <img src="images/nathan.jpg" alt="Portret van Nathan"> -->
         </figure>
         <div class="about__content">
-          <p class="kicker kicker--light" data-reveal>Over Nathan</p>
+          <p class="kicker kicker--light" data-reveal>Over ons</p>
           <h2 class="display section__title" data-reveal>De persoon die voor de <em>groep staat.</em></h2>
           <div class="about__text" data-reveal-group>
             <p>
@@ -356,7 +377,7 @@
         <div class="cta__actions" data-reveal>
           <a class="btn btn--primary" href="contact">Plan een gesprek</a>
           <div class="cta__alt">
-            <a href="tel:+31612345678">Of bel direct 06 12 34 56 78</a>
+            <a href="tel:+31685273448">Of bel direct 06 85 27 34 48</a>
             <a href="mailto:info@nlmotion.nl">Mail naar info@nlmotion.nl</a>
           </div>
         </div>
@@ -374,12 +395,12 @@
       <nav class="footer__nav" aria-label="Footermenu">
         <a href="#aanpak">Aanpak</a>
         <a href="#diensten">Diensten</a>
-        <a href="over-nathan">Over Nathan</a>
+        <a href="over-nathan">Over ons</a>
         <a href="#faq">Veelgestelde vragen</a>
       </nav>
       <div class="footer__contact">
         <a href="mailto:info@nlmotion.nl">info@nlmotion.nl</a>
-        <a href="tel:+31612345678">06 12 34 56 78</a>
+        <a href="tel:+31685273448">06 85 27 34 48</a>
       </div>
     </div>
     <div class="container footer__meta">
@@ -393,7 +414,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="main.js"></script>
-  <a class="wa-fab" href="https://wa.me/31612345678" target="_blank" rel="noopener" aria-label="Stuur ons een WhatsApp-bericht">
+  <a class="wa-fab" href="https://wa.me/31685273448" target="_blank" rel="noopener" aria-label="Stuur ons een WhatsApp-bericht">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.945c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652a11.96 11.96 0 005.71 1.454h.006c6.585 0 11.946-5.36 11.949-11.945a11.9 11.9 0 00-3.481-8.418z"/></svg>
   </a>
 </body>

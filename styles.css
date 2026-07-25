@@ -943,3 +943,87 @@ p { margin: 0; }
 .wa-fab:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.36); }
 .wa-fab svg { width: 32px; height: 32px; fill: currentColor; }
 @media (prefers-reduced-motion: reduce) { .wa-fab { transition: none; } }
+
+/* ============================================================
+   NAV — geneste diensten-groepen (organisaties / particulieren)
+   ============================================================ */
+.nav__group { display: grid; }
+.nav__group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6em;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+.nav__group-toggle:hover { background: rgba(244, 244, 241, 0.06); }
+.nav__caret--sub { width: 10px; height: 10px; opacity: 0.7; transition: transform 0.25s ease; }
+.nav__group-toggle[aria-expanded="true"] .nav__caret--sub { transform: rotate(180deg); }
+.nav__group-list {
+  display: grid;
+  gap: 0.1rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.28s ease, opacity 0.2s ease;
+}
+.nav__group-toggle[aria-expanded="true"] + .nav__group-list { max-height: 220px; opacity: 1; }
+.nav__group-list a { padding-left: 1.7rem; }
+
+/* ============================================================
+   DIENSTEN — publiek-toggle en intro
+   ============================================================ */
+.services__intro {
+  max-width: var(--measure-lead);
+  color: var(--on-light-mute);
+  font-size: var(--fs-lead);
+  margin-top: 1.25rem;
+}
+.section--dark .services__intro { color: var(--on-dark-mute); }
+.services__toggle {
+  display: inline-flex;
+  gap: 4px;
+  margin-top: 2rem;
+  padding: 4px;
+  border: 1px solid var(--line-light);
+  border-radius: 3px;
+  background: rgba(20, 20, 22, 0.03);
+}
+.services__toggle-btn {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  letter-spacing: -0.02em;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--on-light-mute);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.services__toggle-btn:hover { color: var(--on-light); }
+.services__toggle-btn.is-active { background: var(--ink); color: var(--on-dark); }
+.service-card.is-hidden { display: none; }
+
+/* ============================================================
+   CALENDLY-EMBED + INTRODUCTIEVIDEO
+   ============================================================ */
+.calendly-inline-widget { min-width: 320px; height: 700px; }
+.missie-video__vid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}

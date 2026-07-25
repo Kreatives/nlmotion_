@@ -58,6 +58,35 @@ document.documentElement.classList.add("js");
     });
   }
 
+  /* ---------- Nav: geneste diensten-groepen open/dicht ---------- */
+  document.querySelectorAll("[data-group-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+    });
+  });
+
+  /* ---------- Diensten: publiek-toggle (organisaties / particulieren) ---------- */
+  const serviceToggle = document.querySelector("[data-service-toggle]");
+  if (serviceToggle) {
+    const audienceBtns = serviceToggle.querySelectorAll("[data-audience-btn]");
+    const serviceCards = document.querySelectorAll(".service-card[data-audience]");
+    const applyAudience = (audience) => {
+      audienceBtns.forEach((b) => {
+        const on = b.dataset.audienceBtn === audience;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-selected", String(on));
+      });
+      serviceCards.forEach((c) => {
+        c.classList.toggle("is-hidden", c.dataset.audience !== audience);
+      });
+      if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+    };
+    audienceBtns.forEach((b) =>
+      b.addEventListener("click", () => applyAudience(b.dataset.audienceBtn))
+    );
+  }
+
   /* ---------- Lenis smooth scroll ---------- */
   let lenis = null;
   if (typeof window.Lenis !== "undefined" && !prefersReduced) {
