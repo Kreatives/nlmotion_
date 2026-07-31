@@ -654,6 +654,18 @@ p { margin: 0; }
   background: var(--ink-soft);
   overflow: hidden;
   text-align: center;
+  position: relative;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--cta-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  z-index: 0;
+  pointer-events: none;
 }
 .cta__ghost {
   position: absolute;
